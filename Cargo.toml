@@ -1,0 +1,25 @@
+[package]
+name = "rust_mongo_warp"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1.35.1", features = ["macros"] }
+chrono = { version = "0.4.32", features = ["serde"] }
+db = "0.1.0"
+serde = {version = "1.0.195", features=["derive"] }
+warp = "0.3.6"
+futures = { version = "0.3", default-features = false, features = ["async-await"] }
+thiserror = "1.0.56"
+mongodb = "2.8.0"
+
+[profile.dev]
+debug = 0
+
+[profile.test]
+debug = 0
+
+[profile.release]
+panic = 'abort'
